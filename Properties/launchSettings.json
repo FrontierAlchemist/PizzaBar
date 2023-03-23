@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PizzaBar": {
+      "commandName": "Project",
+      "commandLineArgs": "G:\\Books"
+    }
+  }
+}
