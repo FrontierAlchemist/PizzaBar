@@ -2,6 +2,11 @@
 {
 	internal class EntryPoint
 	{
+		internal enum ProviderType
+		{
+			LocalProvider,
+		}
+
 		private static void Main(string[] args)
 		{
 			if (args.Length == 0) {
@@ -15,13 +20,18 @@
 				return;
 			}
 
-			string pathToTarget = args[0];
-			if (!Directory.Exists(pathToTarget)) {
-				Console.WriteLine("Target folder doesn't exist");
-				return;
-			}
+			var providerType = ProviderType.LocalProvider;
+			switch (providerType) {
+				case ProviderType.LocalProvider:
+					string pathToTarget = args[0];
+					if (!Directory.Exists(pathToTarget)) {
+						Console.WriteLine("Target folder doesn't exist");
+						return;
+					}
 
-			new Provider().Provide(pathToSource, pathToTarget);
+					new LocalProvider().Provide(pathToSource, pathToTarget);
+					break;
+			}
 		}
 	}
 }

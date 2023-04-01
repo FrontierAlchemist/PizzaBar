@@ -1,6 +1,6 @@
 ﻿namespace PizzaBar
 {
-	public class Provider
+	public class LocalProvider
 	{
 		public void Provide(string pathToSource, string pathToTarget)
 		{
