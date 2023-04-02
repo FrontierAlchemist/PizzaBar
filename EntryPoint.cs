@@ -5,6 +5,7 @@
 		internal enum ProviderType
 		{
 			LocalProvider,
+			GoogleDriveProvider,
 		}
 
 		private static void Main(string[] args)
@@ -28,8 +29,11 @@
 						Console.WriteLine("Target folder doesn't exist");
 						return;
 					}
-
 					new LocalProvider().Provide(pathToSource, pathToTarget);
+					break;
+				case ProviderType.GoogleDriveProvider:
+					string targetURL = args[0];
+
 					break;
 			}
 		}
